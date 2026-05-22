@@ -1,5 +1,14 @@
 @extends('admin.layouts.app')
 
+@section('title', $pageTitle ?? 'Detail Motor Yamaha')
+@section('meta_description', $metaDescription ?? 'Detail produk Yamaha Sumber Baru Rejeki')
+@section('meta_keywords', 'Yamaha ' . ($motors->nama_produk ?? 'motor') . ', Yamaha SBR Solo, dealer Yamaha Jawa Tengah, kredit motor Yamaha')
+@section('og_title', $pageTitle ?? 'Detail Motor Yamaha')
+@section('og_description', $metaDescription ?? 'Detail produk Yamaha Sumber Baru Rejeki')
+@section('og_image', $ogImage ?? asset('assets/images/LOGOYAMAHA.png'))
+@section('og_url', $canonicalUrl ?? rtrim(config('app.url'), '/') . request()->getRequestUri())
+@section('canonical', $canonicalUrl ?? rtrim(config('app.url'), '/') . request()->getRequestUri())
+
 <style>
     @import url('https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900');
 
@@ -710,7 +719,10 @@
         </a>
     </div>
     <!--Float Button-->
-@section('content')
+    <header class="product-page-header text-center mt-5 mb-4">
+        <h1>{{ $motors->nama_produk }} {{ $motors->type_motor ?? '' }}</h1>
+        <p class="lead text-muted">Harga OTR {{ $motors->harga->plat ?? '' }} - Rp. {{ number_format($motors->harga->harga ?? 0, 2) }}</p>
+    </header>
     <div class="tab-nav-container" style="height: 80px; background-image: url({{ asset('assets/images/herder.png') }});">
         <a href="https://api.whatsapp.com/send/?phone=%2B6281329296789&text&app_absent=0" class="tab text-dark"
             style="background:none;">
@@ -751,11 +763,11 @@
     <div class="products" style="margin-top:0px; padding-top:100px; background-color:white;">
         <div class="container">
             <center>
-                <img style="width:50%;" src="{{ asset($motors->judul_image) }}">
+                <img style="width:50%;" src="{{ asset($motors->judul_image) }}" alt="Judul {{ $motors->nama_produk }} Yamaha">
             </center>
             <center>
                 <div id="show">
-                    <img src="{{ asset('' . $motors->gambar . '') }}" alt="" class="img-fluid wc-image">
+                    <img src="{{ asset($motors->gambar) }}" alt="{{ $motors->nama_produk }} Yamaha {{ $motors->tipe }}" class="img-fluid wc-image">
                 </div>
             </center>
             <br>

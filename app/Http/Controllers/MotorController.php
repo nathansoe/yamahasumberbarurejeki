@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Harga;
 use Image;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 use App\Models\Motor;
 use App\Models\Warna;
 use App\Models\Region;
@@ -469,10 +470,27 @@ class MotorController extends Controller
 
     public function detailMotor($id)
     {
-        $motors = Motor::with('harga')->find($id);
-        // return $motors;
+        $motors = Motor::with('harga')->findOrFail($id);
         $image = $motors->warna()->where('id', 1)->first();
         $data = $motors->load('warna');
-        return view('content.detail-motor', compact('motors', 'data', 'image'));
+
+        $pageTitle = $motors->nama_produk . ' | Yamaha Sumber Baru Rejeki';
+        $metaDescription = Str::limit(
+            'Beli ' . $motors->nama_produk . ' dengan harga OTR ' . ($motors->harga->plat ?? '') . ' di Yamaha Sumber Baru Rejeki Solo. Spesifikasi: ' . $motors->tipe . ', transmisi ' . $motors->transmisi . ', volume silinder ' . $motors->vol_silinder . '.',
+            155,
+            '...'
+        );
+        $canonicalUrl = rtrim(config('app.url'), '/') . '/produk/list-motor/detail/' . $motors->id;
+        $ogImage = $motors->gambar ? asset($motors->gambar) : asset('assets/images/LOGOYAMAHA.png');
+
+        return view('content.detail-motor', compact(
+            'motors',
+            'data',
+            'image',
+            'pageTitle',
+            'metaDescription',
+            'canonicalUrl',
+            'ogImage'
+        ));
     }
 }

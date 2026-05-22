@@ -1,5 +1,13 @@
 @extends('admin.layouts.app')
 
+@section('title', $accesories->nama_produk . ' | Aksesoris Yamaha Sumber Baru Rejeki')
+@section('meta_description', 'Detail aksesoris Yamaha ' . $accesories->nama_produk . ' di Yamaha Sumber Baru Rejeki Solo.')
+@section('og_title', $accesories->nama_produk . ' | Aksesoris Yamaha Sumber Baru Rejeki')
+@section('og_description', 'Detail aksesoris Yamaha ' . $accesories->nama_produk . ' di Yamaha Sumber Baru Rejeki Solo.')
+@section('og_image', asset($accesories->gambar ?: 'assets/images/LOGOYAMAHA.png'))
+@section('og_url', rtrim(config('app.url'), '/') . '/accesories/details/' . $accesories->id)
+@section('canonical', rtrim(config('app.url'), '/') . '/accesories/details/' . $accesories->id)
+
   <style>
     @import url('https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900');
 
@@ -1032,7 +1040,7 @@
         <div class="row">
           <div class="col-md-6">
             <div>
-              <img src="{{ asset($accesories->gambar) }}" alt="" class="img-fluid wc-image">
+              <img src="{{ asset($accesories->gambar) }}" alt="{{ $accesories->nama_produk }} | Aksesoris Yamaha" class="img-fluid wc-image">
             </div>
             <br>
             <label style="color: black;"><b>Related Product</b></label>
@@ -1040,7 +1048,7 @@
               @foreach ($acc as $accesor)
               <div class="col-md-4">
                 <div class="product-item">
-                  <a href="{{ url('accesories/details/'.$accesor->id) }}"><img src="{{ asset($accesor->gambar) }}" alt=""></a>
+                  <a href="{{ url('accesories/details/'.$accesor->id) }}"><img src="{{ asset($accesor->gambar) }}" alt="{{ $accesor->nama_produk }} | Aksesoris Yamaha" class="img-fluid"></a>
                   <div class="down-content">
                     <a href="{{ url('accesories/details/'.$accesor->id) }}"><h4>{{ $accesor->nama_produk }}</h4></a>
                   </div>

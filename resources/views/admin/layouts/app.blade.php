@@ -7,11 +7,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="TllC_as_5qtEOns3OYBYvZzRICNuXm0Ldis8Tot9ZFA" />
-  <meta name="description" content="">
+  <meta name="description" content="@yield('meta_description', 'Dealer Yamaha Sumber Baru Rejeki Solo - Harga Yamaha Gear 125, Fazzio, Filano, NMax and service terbaik di Solo dan Jawa Tengah.')">
   <meta name="author" content="yamaha sumber baru rejeki">
-   <meta name="keywords" content="yamaha solo, yamaha di solo, dealer yamaha solo, dealer yamaha di solo, yamaha sbr solo, yamaha sbr, kredit motor yamaha, yamaha sumber baru rejeki, yamaha sbr, sumber baru rejeki">
+  <meta name="keywords" content="@yield('meta_keywords', 'yamaha solo, yamaha di solo, dealer yamaha solo, dealer yamaha di solo, yamaha sumber baru rejeki, kredit motor yamaha, yamaha gear 125, yamaha nmax, yamaha fazzio')">
   <link rel="icon" href="{{ asset('assets/images/LOGOYAMAHA.png') }}">
   <meta name="csrf-token" content="{{ csrf_token() }}">
+  <link rel="canonical" href="@yield('canonical', rtrim(config('app.url'), '/') . request()->getRequestUri())" />
+  @php
+    $defaultDescription = 'Dealer Yamaha Sumber Baru Rejeki Solo - Harga Yamaha Gear 125, Fazzio, Filano, NMax and service terbaik di Solo dan Jawa Tengah.';
+    $ogDescription = trim($__env->yieldContent('og_description')) ?: trim($__env->yieldContent('meta_description', $defaultDescription));
+  @endphp
+  <meta property="og:title" content="@yield('og_title', 'Dealer Motor Yamaha Sumber Baru Rejeki Solo')">
+  <meta property="og:description" content="{{ $ogDescription }}">
+  <meta property="og:image" content="@yield('og_image', asset('assets/images/LOGOYAMAHA.png'))">
+  <meta property="og:url" content="@yield('og_url', rtrim(config('app.url'), '/') . request()->getRequestUri())">
+  <meta property="og:type" content="@yield('og_type', 'website')">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="@yield('og_title', 'Dealer Motor Yamaha Sumber Baru Rejeki Solo')">
+  <meta name="twitter:description" content="{{ $ogDescription }}">
+  <meta name="twitter:image" content="@yield('og_image', asset('assets/images/LOGOYAMAHA.png'))">
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -23,11 +37,59 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900" rel="stylesheet">
-  <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
   
   <!--<script src="https://kit.fontawesome.com/e7ee126aa0.js" crossorigin="anonymous"></script>-->
 
-  <title>Dealer Motor Yamaha Sumber Baru Rejeki Solo</title>
+  <title>@yield('title', 'Dealer Motor Yamaha Sumber Baru Rejeki Solo')</title>
+
+  @php
+    $jsonLdDescription = trim($__env->yieldContent('meta_description', 'Dealer Yamaha Sumber Baru Rejeki Solo - Harga Yamaha Gear 125, Fazzio, Filano, NMax and service terbaik di Solo dan Jawa Tengah.'));
+    $jsonLdImage = trim($__env->yieldContent('og_image', asset('assets/images/LOGOYAMAHA.png')));
+  @endphp
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoDealer",
+    "name": "Yamaha Sumber Baru Rejeki",
+    "url": {{ json_encode(rtrim(config('app.url'), '/')) }},
+    "logo": {{ json_encode(asset('assets/images/LOGOYAMAHA.png')) }},
+    "description": {{ json_encode(
+        Illuminate\Support\Str::limit(strip_tags($jsonLdDescription), 200, '...'),
+        JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+    ) }},
+    "image": {{ json_encode($jsonLdImage, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) }},
+    "telephone": "+6281329296789",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Gatot Subroto No.150, Jayengan, Kec. Serengan",
+      "addressLocality": "Kota Surakarta",
+      "addressRegion": "Jawa Tengah",
+      "postalCode": "57152",
+      "addressCountry": "ID"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "09:00",
+        "closes": "14:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/yamahasumberbarurejeki",
+      "https://www.instagram.com/yamahasumberbarurejeki"
+    ]
+  }
+  </script>
+
+  @stack('jsonld')
 
   <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 

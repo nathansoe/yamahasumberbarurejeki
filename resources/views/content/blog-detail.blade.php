@@ -1,5 +1,13 @@
 @extends('admin.layouts.app')
 
+@section('title', $artikel->judul . ' | Yamaha Sumber Baru Rejeki')
+@section('meta_description', \Illuminate\Support\Str::limit(strip_tags($artikel->description), 155, '...'))
+@section('og_title', $artikel->judul . ' | Yamaha Sumber Baru Rejeki')
+@section('og_description', \Illuminate\Support\Str::limit(strip_tags($artikel->description), 155, '...'))
+@section('og_image', asset($artikel->gambar ?: 'assets/images/LOGOYAMAHA.png'))
+@section('og_url', rtrim(config('app.url'), '/') . '/artikel/' . $artikel->slug)
+@section('canonical', rtrim(config('app.url'), '/') . '/artikel/' . $artikel->slug)
+
 <style>
     @import url('https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900');
 
@@ -1039,9 +1047,9 @@
         <div class="row"> 
             <div class="col-md-12"> 
               <div class="section-heading"> 
-                <h2>{{ $artikel->judul }}</h2> 
+                <h1>{{ $artikel->judul }}</h1> 
                         <div> 
-          <img src="{{ asset($artikel->gambar) }}" class="img-fluid" alt=""> 
+          <img src="{{ asset($artikel->gambar) }}" class="img-fluid" alt="{{ $artikel->judul }}"> 
         </div> 
               </div> 
             </div> 

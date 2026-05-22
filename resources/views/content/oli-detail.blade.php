@@ -1031,7 +1031,7 @@
         <div class="row">
           <div class="col-md-6">
             <div>
-              <img src="{{ asset($oli->gambar) }}" alt="" class="img-fluid wc-image">
+              <img src="{{ asset($oli->gambar) }}" alt="{{ $oli->nama_oli }} | Yamalube Yamaha" class="img-fluid wc-image">
             </div>
             <br>
             <label style="color: black;"><b>Related Product</b></label>
@@ -1039,7 +1039,7 @@
               @foreach ($o as $yamalube)
               <div class="col-md-4">
                 <div class="product-item">
-                  <a href="{{ url('yamalube/details/'.$yamalube->id) }}"><img src="{{ asset($yamalube->gambar) }}" alt=""></a>
+                  <a href="{{ url('yamalube/details/'.$yamalube->id) }}"><img src="{{ asset($yamalube->gambar) }}" alt="{{ $yamalube->nama_oli }} | Yamalube Yamaha" class="img-fluid"></a>
                   <div class="down-content">
                     <a href="{{ url('yamalube/details/'.$yamalube->id) }}"><h4>{{ $yamalube->nama_oli }}</h4></a>
                   </div>

@@ -797,10 +797,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="container" style="width: 100%; height: auto;"
-            data-mc-src="f4829f65-35fa-40bc-81c2-9a454afd6b7b#instagram"></div>
-          <script src="https://cdn2.woxo.tech/a.js#6274c1455f307f0028236f89" async data-usrc>
-          </script>
+          <div id="instagram-widget" class="instagram-widget-container" style="width: 100%; min-height: 600px;"
+            data-mc-src="f4829f65-35fa-40bc-81c2-9a454afd6b7b"></div>
         </div>
       </div>
       <div style="position: absolute; margin-top: -25px; width: 90%;" class="box2"></div>
@@ -928,9 +926,7 @@
         setTimeout(carousel, 5000); // Change image every 2 seconds
       }
       </script>
-      <script>
-          UA-233470181-1
-      </script>
+      <script src="https://cdn2.woxo.tech/a.js#6274c1455f307f0028236f89" async data-usrc></script>
   </br>
   </br>
   </br>

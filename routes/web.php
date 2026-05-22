@@ -66,6 +66,9 @@ Route::get('/accesories', function () {
 });
 
 Route::get('/sitemap.xml', [ContentController::class, 'sitemapArtikel']);
+Route::get('/robots.txt', function () {
+    return response()->view('content.robots')->header('Content-Type', 'text/plain');
+});
 
 Route::get('/yamalube', function () {
     $oli = Oli::all();

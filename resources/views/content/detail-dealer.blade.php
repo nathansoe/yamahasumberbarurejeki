@@ -1,5 +1,13 @@
 @extends('admin.layouts.app')
 
+@section('title', $dealers->nama_dealer . ' | Dealer Yamaha Sumber Baru Rejeki')
+@section('meta_description', 'Dealer Yamaha ' . $dealers->nama_dealer . ' di Sumber Baru Rejeki Solo. Lokasi: ' . $dealers->lokasi)
+@section('og_title', $dealers->nama_dealer . ' | Dealer Yamaha Sumber Baru Rejeki')
+@section('og_description', 'Dealer Yamaha ' . $dealers->nama_dealer . ' di Sumber Baru Rejeki Solo. Lokasi: ' . $dealers->lokasi)
+@section('og_image', asset($dealers->gambar ?: 'assets/images/LOGOYAMAHA.png'))
+@section('og_url', rtrim(config('app.url'), '/') . '/dealer/list-dealer/detail/' . $dealers->id)
+@section('canonical', rtrim(config('app.url'), '/') . '/dealer/list-dealer/detail/' . $dealers->id)
+
 <style>
   @import url('https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900');
 
@@ -1003,7 +1011,7 @@
         <div class="row">
           <div class="col-md-6">
             <div>
-              <img src="{{ asset($dealers->gambar) }}" alt="" class="img-fluid wc-image">
+              <img src="{{ asset($dealers->gambar) }}" alt="{{ $dealers->nama_dealer }} | Dealer Yamaha Sumber Baru Rejeki" class="img-fluid wc-image">
             </div>
             <br>
           </div>
