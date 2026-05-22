@@ -3,12 +3,16 @@
 /public/hot
 /public/storage
 /public/Stisla/node_modules
-/public/images/motor
-/public/images/accesories
-/public/images/spesifikasi
-/public/images/tabel
-/public/images/judul
-/public/data_motor
+
+# Proteksi Mutlak Aset Gambar/Data Biar Tidak Kebawa ke Git (Sangat Aman Untuk Server)
+/public/images/motor/
+/public/images/accesories/
+/public/images/spesifikasi/
+/public/images/tabel/
+/public/images/judul/
+/public/data_motor/
+
+# Proteksi File System & Framework
 /storage/*.key
 /vendor
 .env
@@ -20,4 +24,7 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-/public_html
+
+# Jaga-jaga jika ada sisa file konfigurasi server bawaan cPanel
+/.well-known/
+/public/.well-known/
