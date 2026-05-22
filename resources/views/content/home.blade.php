@@ -875,24 +875,28 @@
             <div class="service-item">
               <div class="">
 <img style="width: 100%; height:auto;" src="{{ asset('assets/images/testi1.jpeg') }}" alt="yamaha di solo">
+<div> SBR Mantap </div>
               </div>
             </div>
 
             <div class="service-item">
               <div class="">
                 <img style="width: 100%; height:auto;" src="{{ asset('assets/images/testi2.jpeg') }}" alt="yamaha solo">
+                <div> Motor impian bisa kebeli di SBR </div>
               </div>
             </div>
 
             <div class="service-item">
               <div class="">
                <img style="width: 100%; height:auto;" src="{{ asset('assets/images/testi3.jpeg') }}" alt="yamaha di solo">
+               <div> Semoga SBR semakin Jaya </div>
               </div>
             </div>
 
             <div class="service-item">
               <div class="">
                 <img style="width: 100%; height:auto;" src="{{ asset('assets/images/testi4.jpeg') }}" alt="yamaha di solo">
+                <div> SBR selalu memuaskan </div>
               </div>
 
             </div>
@@ -900,6 +904,7 @@
             <div class="service-item">
               <div class="">
                 <img style="width: 100%; height:auto;" src="{{ asset('assets/images/testi5.jpeg') }}" alt="yamaha di solo">
+                <div> Pelayanan SBR selalu mengesankan </div>
               </div>
             </div>
           </div>

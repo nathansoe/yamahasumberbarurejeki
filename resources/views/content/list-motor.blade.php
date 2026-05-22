@@ -866,7 +866,7 @@
                                                 <a href="{{ url('/produk/list-motor/detail/'.$motor->id) }}">
                                                     <h4>{{ $motor->nama_produk }}</h4>
                                                 </a>
-                                                <h6>Rp. {{ number_format($motor->harga->harga, 2) }}</h6>
+                                        <h6>{{ $motor->harga->harga }}</h6>
                                             </div>
                                         </div>
                                     </div>
