@@ -718,11 +718,12 @@
             <i class="fas fa-map-marker-alt fa-lg"></i>
         </a>
     </div>
+    <!--<br/><br/><br/>-->
     <!--Float Button-->
-    <header class="product-page-header text-center mt-5 mb-4">
-        <h1>{{ $motors->nama_produk }} {{ $motors->type_motor ?? '' }}</h1>
-        <p class="lead text-muted">Harga OTR {{ $motors->harga->plat ?? '' }} - Rp. {{ number_format($motors->harga->harga ?? 0, 2) }}</p>
-    </header>
+    <!--<header class="product-page-header text-center mt-5 mb-4">-->
+    <!--    <h1>{{ $motors->nama_produk }} {{ $motors->type_motor ?? '' }}</h1>-->
+    <!--    <p class="lead text-muted">Harga OTR {{ $motors->harga->plat ?? '' }} - Rp. {{ is_numeric($motors->harga) ? number_format((float)$motors->harga, 0, ',', '.') : '-' }}</p>-->
+    <!--</header>-->
     <div class="tab-nav-container" style="height: 80px; background-image: url({{ asset('assets/images/herder.png') }});">
         <a href="https://api.whatsapp.com/send/?phone=%2B6281329296789&text&app_absent=0" class="tab text-dark"
             style="background:none;">
