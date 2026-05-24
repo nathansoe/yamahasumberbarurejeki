@@ -822,7 +822,7 @@
                 </div>
                 <div class="col-4 col-md-2" id="col-subnav">
                     <div class="sub-content-subnav">
-                        <a href="#" onclick="getCategoryMotor('naked', '{{$wilayah->nomor_polisi}}')"
+                        <a href="#" onclick="getCategoryMotor('Naked Bike', '{{$wilayah->nomor_polisi}}')"
                             class="subnav text-white bg-transparent">NAKED BIKE</a>
                     </div>
                 </div>
