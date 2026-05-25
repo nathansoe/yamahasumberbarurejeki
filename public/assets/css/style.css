@@ -229,7 +229,9 @@ header .navbar {
 }
 @media only screen and (max-width: 1080px) {
 	.navbar .navbar-brand h2 {
-		display:none;
+		/* display:none; */
+		font-size: 18px !important;
+		/* size: 11px; */
 	}
   }
   .image1 {
