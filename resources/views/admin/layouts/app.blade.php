@@ -10,7 +10,7 @@
   <meta name="description" content="@yield('meta_description', 'Dealer Yamaha Sumber Baru Rejeki Solo - Harga Yamaha Gear 125, Fazzio, Filano, NMax and service terbaik di Solo dan Jawa Tengah.')">
   <meta name="author" content="yamaha sumber baru rejeki">
   <meta name="keywords" content="@yield('meta_keywords', 'yamaha solo, yamaha di solo, dealer yamaha solo, dealer yamaha di solo, yamaha sumber baru rejeki, kredit motor yamaha, yamaha gear 125, yamaha nmax, yamaha fazzio')">
-  <link rel="icon" href="{{ asset('assets/images/LOGOYAMAHA.png') }}">
+  <link rel="icon" href="{{ asset('assets/favicon.ico') }}">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="canonical" href="@yield('canonical', rtrim(config('app.url'), '/') . request()->getRequestUri())" />
   @php
@@ -19,13 +19,13 @@
   @endphp
   <meta property="og:title" content="@yield('og_title', 'Dealer Motor Yamaha Sumber Baru Rejeki Solo')">
   <meta property="og:description" content="{{ $ogDescription }}">
-  <meta property="og:image" content="@yield('og_image', asset('assets/images/LOGOYAMAHA.png'))">
+  <meta property="og:image" content="@yield('og_image', asset('logo-sbr.jpeg'))">
   <meta property="og:url" content="@yield('og_url', rtrim(config('app.url'), '/') . request()->getRequestUri())">
   <meta property="og:type" content="@yield('og_type', 'website')">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="@yield('og_title', 'Dealer Motor Yamaha Sumber Baru Rejeki Solo')">
   <meta name="twitter:description" content="{{ $ogDescription }}">
-  <meta name="twitter:image" content="@yield('og_image', asset('assets/images/LOGOYAMAHA.png'))">
+  <meta name="twitter:image" content="@yield('og_image', asset('logo-sbr.jpeg'))">
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
